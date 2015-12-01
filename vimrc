@@ -15,6 +15,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'roman/golden-ratio'
 Bundle 'dandorman/vim-colors'
 Bundle 'majutsushi/tagbar'
+Bundle 'sickill/vim-monokai'
 
 Plugin 'bling/vim-airline'       " UI statusbar niceties
 set laststatus=2               " enable airline even if no splits
@@ -93,7 +94,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 filetype plugin indent on
 
 if &t_Co >= 256 || has("gui_running")
-  colorscheme mustang
+  colorscheme monokai
 endif
 
 if &t_Co > 2 || has("gui_running")
@@ -187,7 +188,7 @@ set directory+=~/tmp//
 set directory+=.
 
 " viminfo stores the the state of your previous editing session
-set viminfo+=n~/.vim/viminfo
+set viminfo='10,\"100,:20,%,n~/.vim/viminfo
 
 if exists("+undofile")
   " undofile - This allows you to use undos after exiting and restarting
@@ -201,3 +202,15 @@ if exists("+undofile")
   set undodir+=~/.vim/undo//
   set undofile
 endif
+
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
