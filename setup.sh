@@ -6,3 +6,5 @@ mkdir ~/.vim/swap
 mkdir ~/.vim/undo
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+vim -c "execute \"PluginInstall\" | qa"
