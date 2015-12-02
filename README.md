@@ -7,9 +7,11 @@ mixed in with stuff that works for me. YMMV.
 ## Install
 ```
 git clone https://github.com/sollie/vim.git ~/.vim
+sh ~/.vim/setup.sh
 ```
 or
 ```
 git clone git@github.com:sollie/vim.git ~/.vim
+sh ~/.vim/setup.sh
 ```
 
