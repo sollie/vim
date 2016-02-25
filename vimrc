@@ -17,7 +17,8 @@ Bundle 'dandorman/vim-colors'
 Bundle 'majutsushi/tagbar'
 Bundle 'sickill/vim-monokai'
 
-Plugin 'bling/vim-airline'       " UI statusbar niceties
+Plugin 'vim-airline/vim-airline'       " UI statusbar niceties
+Plugin 'vim-airline/vim-airline-themes'
 set laststatus=2               " enable airline even if no splits
 let g:airline_symbols = {}
 let g:airline_theme='luna'
