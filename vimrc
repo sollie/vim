@@ -1,5 +1,6 @@
 set nocompatible
 filetype off
+set colorcolumn=90
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
