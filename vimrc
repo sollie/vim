@@ -62,6 +62,10 @@ set hidden
 
 set laststatus=2
 
+set list       
+set listchars=tab:•\ ,trail:•,extends:»,precedes:«
+
+
 set nowrap        " don't wrap lines
 set tabstop=2     " a tab is two spaces
 set expandtab
