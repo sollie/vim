@@ -122,6 +122,8 @@ cmap w!! w !sudo tee % >/dev/null
 
 set pastetoggle=<F2>
 
+let g:go_fmt_command = "goimports"
+
 let g:tagbar_type_go = {
       \ 'ctagstype' : 'go',
       \ 'kinds'     : [
