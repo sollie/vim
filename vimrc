@@ -14,9 +14,10 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'Shougo/unite.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'roman/golden-ratio'
-Bundle 'dandorman/vim-colors'
 Bundle 'majutsushi/tagbar'
-Bundle 'sickill/vim-monokai'
+
+Plugin 'morhetz/gruvbox'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
 
 Plugin 'vim-airline/vim-airline'       " UI statusbar niceties
 Plugin 'vim-airline/vim-airline-themes'
@@ -47,7 +48,7 @@ let g:airline_mode_map = {
       \ ' ': 'V-BLCK',
       \ }
 
-filetype on
+filetype plugin on
 
 " change the mapleader from \ to ,
 let mapleader=","
@@ -99,8 +100,11 @@ set whichwrap=b,s,h,l,<,>,[,]
 
 filetype plugin indent on
 
+set termguicolors
+
 if &t_Co >= 256 || has("gui_running")
-  colorscheme monokai
+  set background=dark
+  colorscheme gruvbox
 endif
 
 if &t_Co > 2 || has("gui_running")
