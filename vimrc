@@ -53,6 +53,10 @@ filetype plugin on
 " change the mapleader from \ to ,
 let mapleader=","
 
+set completeopt=menu
+" Autocomplete
+inoremap <leader>, <C-x><C-o>
+
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
