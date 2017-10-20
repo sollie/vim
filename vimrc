@@ -16,14 +16,14 @@ Bundle 'scrooloose/syntastic'
 Bundle 'roman/golden-ratio'
 Bundle 'majutsushi/tagbar'
 
-Plugin 'morhetz/gruvbox'
+Plugin 'josuegaleas/jay'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 
 Plugin 'vim-airline/vim-airline'       " UI statusbar niceties
 Plugin 'vim-airline/vim-airline-themes'
 set laststatus=2               " enable airline even if no splits
 let g:airline_symbols = {}
-let g:airline_theme='luna'
+"let g:airline_theme='jay'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#syntastic#enabled=1
@@ -108,7 +108,7 @@ set termguicolors
 
 if &t_Co >= 256 || has("gui_running")
   set background=dark
-  colorscheme gruvbox
+  colorscheme jay
 endif
 
 if &t_Co > 2 || has("gui_running")
