@@ -15,6 +15,7 @@ Bundle 'Shougo/unite.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'roman/golden-ratio'
 Bundle 'majutsushi/tagbar'
+Bundle 'sirtaj/vim-openscad'
 
 Plugin 'josuegaleas/jay'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
