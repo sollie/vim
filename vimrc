@@ -19,6 +19,7 @@ Bundle 'sirtaj/vim-openscad'
 
 Plugin 'josuegaleas/jay'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'vim-airline/vim-airline'       " UI statusbar niceties
 Plugin 'vim-airline/vim-airline-themes'
@@ -135,6 +136,11 @@ let g:go_fmt_command = "goimports"
 let g:go_metalinter_autosave = 1
 "let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 "let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
 let g:tagbar_type_go = {
       \ 'ctagstype' : 'go',
