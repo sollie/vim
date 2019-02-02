@@ -20,6 +20,7 @@ Bundle 'sirtaj/vim-openscad'
 Plugin 'josuegaleas/jay'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'chr4/nginx.vim'
 
 Plugin 'vim-airline/vim-airline'       " UI statusbar niceties
 Plugin 'vim-airline/vim-airline-themes'
