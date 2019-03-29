@@ -26,6 +26,7 @@ Plugin 'ekalinin/dockerfile.vim'
 Plugin 'vim-airline/vim-airline'       " UI statusbar niceties
 Plugin 'vim-airline/vim-airline-themes'
 set laststatus=2               " enable airline even if no splits
+let g:go_metalinter_command = 'golangci-lint'
 let g:airline_symbols = {}
 "let g:airline_theme='jay'
 let g:airline_powerline_fonts=1
