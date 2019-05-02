@@ -109,7 +109,9 @@ set whichwrap=b,s,h,l,<,>,[,]
 
 filetype plugin indent on
 
-set termguicolors
+if &term !~ 'xterm'
+  set termguicolors
+endif
 
 if &t_Co >= 256 || has("gui_running")
   set background=dark
