@@ -1,30 +1,39 @@
 set nocompatible
 filetype off
 set colorcolumn=90
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
 
-Bundle 'VundleVim/Vundle.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'saltstack/salt-vim'
-Bundle 'Glench/Vim-Jinja2-Syntax'
-Bundle 'fatih/vim-go'
-Bundle 'scrooloose/nerdtree'
-Bundle 'Shougo/unite.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'roman/golden-ratio'
-Bundle 'majutsushi/tagbar'
-Bundle 'sirtaj/vim-openscad'
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-Plugin 'josuegaleas/jay'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'chr4/nginx.vim'
-Plugin 'ekalinin/dockerfile.vim'
+call plug#begin('~/.vim/plugged')
 
-Plugin 'vim-airline/vim-airline'       " UI statusbar niceties
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'VundleVim/Vundle.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'saltstack/salt-vim'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'fatih/vim-go'
+Plug 'scrooloose/nerdtree'
+Plug 'Shougo/unite.vim'
+Plug 'scrooloose/syntastic'
+Plug 'roman/golden-ratio'
+Plug 'majutsushi/tagbar'
+Plug 'sirtaj/vim-openscad'
+
+Plug 'josuegaleas/jay'
+Plug 'nsf/gocode', {'rtp': 'vim/'}
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'chr4/nginx.vim'
+Plug 'ekalinin/dockerfile.vim'
+
+Plug 'vim-airline/vim-airline'       " UI statusbar niceties
+Plug 'vim-airline/vim-airline-themes'
+
+call plug#end()
+
 set laststatus=2               " enable airline even if no splits
 let g:go_metalinter_command = 'golangci-lint'
 let g:airline_symbols = {}
