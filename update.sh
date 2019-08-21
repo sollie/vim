@@ -1,3 +1,3 @@
 #!/bin/sh
 
-vim -c "execute \"PluginUpdate\" | qa"
+vim -c "execute \"PlugUpdate\" | qa"

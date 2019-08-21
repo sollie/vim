@@ -3,3 +3,5 @@
 /swap/*
 /undo/*
 /viminfo
+/autoload/*
+/plugged/*
