@@ -5,7 +5,7 @@ set colorcolumn=90
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  autocmd VimEnter * PlugInstall --sync | qall
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -36,6 +36,7 @@ call plug#end()
 
 set laststatus=2               " enable airline even if no splits
 let g:go_metalinter_command = 'golangci-lint'
+if !exists("g:pluginname_setting")
 let g:airline_symbols = {}
 "let g:airline_theme='jay'
 let g:airline_powerline_fonts=1
@@ -61,6 +62,7 @@ let g:airline_mode_map = {
       \ 'c' : 'CMD   ',
       \ ' ': 'V-BLCK',
       \ }
+endif
 
 filetype plugin on
 
