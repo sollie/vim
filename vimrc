@@ -15,7 +15,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'saltstack/salt-vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'fatih/vim-go'
+if v:version > 800
+    Plug 'fatih/vim-go'
+endif
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/unite.vim'
 Plug 'scrooloose/syntastic'
