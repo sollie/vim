@@ -2,14 +2,27 @@ set nocompatible
 filetype off
 set colorcolumn=90
 
+if !filereadable($HOME . '/.vim/lastupdate')
+  silent! call system("bash -c \"touch ~/.vim/lastupdate\"")
+endif
+
 if isdirectory($HOME . '/.vim/plugged') == 0
   silent! mkdir ~/.vim/backup
   silent! mkdir ~/.vim/autoload
   silent! mkdir ~/.vim/swap
   silent! mkdir ~/.vim/undo
+  let time = [localtime()]
+  silent! call writefile(time, glob($HOME . '/.vim/lastupdate'), 'b')
   silent !curl -sfLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 2>&1
   autocmd VimEnter * PlugInstall --sync | q
+endif
+
+if (localtime() - getftime($HOME . '/.vim/lastupdate') > 604800)
+  let time = [localtime()]
+  silent! call writefile(time, glob($HOME . '/.vim/lastupdate'), 'b')
+  autocmd VimEnter * PlugUpdate --sync | q
+  redraw!
 endif
 
 call plug#begin('~/.vim/plugged')
