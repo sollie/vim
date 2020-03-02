@@ -3,6 +3,10 @@ filetype off
 set colorcolumn=90
 
 if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !mkdir ~/.vim/backup
+  silent !mkdir ~/.vim/autoload
+  silent !mkdir ~/.vim/swap
+  silent !mkdir ~/.vim/undo
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | qall
@@ -24,6 +28,7 @@ Plug 'scrooloose/syntastic'
 Plug 'roman/golden-ratio'
 Plug 'majutsushi/tagbar'
 Plug 'sirtaj/vim-openscad'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'josuegaleas/jay'
 Plug 'nsf/gocode', {'rtp': 'vim/'}
