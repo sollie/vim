@@ -2,8 +2,9 @@ set nocompatible
 filetype off
 set colorcolumn=90
 
+
 if !filereadable($HOME . '/.vim/lastupdate')
-  silent! call system("bash -c \"touch ~/.vim/lastupdate\"")
+  silent! call execute("!touch " . $HOME . "/.vim/lastupdate")
 endif
 
 if isdirectory($HOME . '/.vim/plugged') == 0
