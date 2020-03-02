@@ -41,6 +41,8 @@ Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
+set updatetime=100
+
 set laststatus=2               " enable airline even if no splits
 let g:go_metalinter_command = 'golangci-lint'
 if !exists("g:pluginname_setting")
