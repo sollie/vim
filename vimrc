@@ -42,7 +42,10 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 set updatetime=100
-set signcolumn=yes
+
+if (v:version == 704 && has('patch2201')) || v:version >= 800
+  set signcolumn=yes
+endif
 
 set laststatus=2               " enable airline even if no splits
 let g:go_metalinter_command = 'golangci-lint'
