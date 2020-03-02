@@ -4,7 +4,7 @@ set colorcolumn=90
 
 
 if !filereadable($HOME . '/.vim/lastupdate')
-  silent! call execute("!touch " . $HOME . "/.vim/lastupdate")
+  silent! call execute("!bash -c \"touch " . $HOME . "/.vim/lastupdate\"")
 endif
 
 if isdirectory($HOME . '/.vim/plugged') == 0
