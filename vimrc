@@ -2,6 +2,7 @@ set nocompatible
 filetype off
 set colorcolumn=90
 
+let g:plug_threads = 32
 
 if !filereadable($HOME . '/.vim/lastupdate')
   silent! call execute("!bash -c \"touch " . $HOME . "/.vim/lastupdate\"")
