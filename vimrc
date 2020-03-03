@@ -5,7 +5,7 @@ set colorcolumn=90
 let g:plug_threads = 32
 
 if !filereadable($HOME . '/.vim/lastupdate')
-  silent! call execute("!bash -c \"touch " . $HOME . "/.vim/lastupdate\"")
+  silent! execute("!bash -c \"touch " . $HOME . "/.vim/lastupdate\"")
 endif
 
 if isdirectory($HOME . '/.vim/plugged') == 0
