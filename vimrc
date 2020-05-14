@@ -48,7 +48,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'josuegaleas/jay'
 Plug 'nsf/gocode', {'rtp': 'vim/'}
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'chr4/nginx.vim'
+Plug 'sollie/nginx.vim'
 Plug 'ekalinin/dockerfile.vim'
 
 Plug 'vim-airline/vim-airline'       " UI statusbar niceties
@@ -63,7 +63,7 @@ if (v:version == 704 && has('patch2201')) || v:version >= 800
 endif
 
 set laststatus=2               " enable airline even if no splits
-let g:go_metalinter_command = 'golangci-lint'
+
 if !exists("g:pluginname_setting")
 let g:airline_symbols = {}
 "let g:airline_theme='jay'
@@ -177,8 +177,28 @@ set pastetoggle=<F2>
 
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_autosave = 1
-"let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_command = 'golangci-lint'
+let g:go_metalinter_enabled = ['golangci-lint', 'vet', 'errcheck']
 "let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+let g:go_auto_sameids = 1
+let g:go_highlight_array_whitespace_error = 1
+let g:go_highlight_chan_whitespace_error = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_space_tab_error = 1
+let g:go_highlight_trailing_whitespace_error = 0
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_string_spellcheck = 1
+let g:go_highlight_format_strings = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_fmt_experimental = 1
 
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
