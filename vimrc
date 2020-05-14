@@ -48,7 +48,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'josuegaleas/jay'
 Plug 'nsf/gocode', {'rtp': 'vim/'}
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'sollie/nginx.vim'
+Plug 'chr4/nginx.vim'
 Plug 'ekalinin/dockerfile.vim'
 
 Plug 'vim-airline/vim-airline'       " UI statusbar niceties
