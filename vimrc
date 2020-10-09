@@ -56,6 +56,8 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'hashivim/vim-terraform'
 
+let g:terraform_fmt_on_save=1
+
 call plug#end()
 
 set updatetime=100
