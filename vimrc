@@ -54,6 +54,8 @@ Plug 'ekalinin/dockerfile.vim'
 Plug 'vim-airline/vim-airline'       " UI statusbar niceties
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'hashivim/vim-terraform'
+
 call plug#end()
 
 set updatetime=100
@@ -178,8 +180,8 @@ set pastetoggle=<F2>
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_command = 'golangci-lint'
-let g:go_metalinter_enabled = ['golangci-lint', 'vet', 'errcheck']
-"let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_enabled = ['vet', 'goconst', 'errcheck', 'gosimple', 'golint', 'varcheck', 'deadcode', 'maligned', 'ineffassign', 'varcheck', 'unused', 'prealloc', 'scopelint', 'staticcheck', 'gosec']
+let g:go_metalinter_autosave_enabled = ['vet', 'goconst', 'gofmt', 'golint']
 let g:go_auto_sameids = 1
 let g:go_highlight_array_whitespace_error = 1
 let g:go_highlight_chan_whitespace_error = 1
