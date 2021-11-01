@@ -104,12 +104,6 @@ filetype plugin on
 let mapleader=","
 
 set completeopt=menu
-" Autocomplete
-inoremap <leader>, <C-x><C-o>
-
-" Quickly edit/reload the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 set encoding=utf-8
 scriptencoding utf-8
@@ -172,12 +166,6 @@ fun! AllIndent()
   normal(gg=G)
   execute ':' . oldLine
 endfun
-map -- :call AllIndent()<cr>
-
-vmap Q gq
-nmap Q gqap
-nmap <silent> ,/ :nohlsearch<CR>
-cmap w!! w !sudo tee % >/dev/null
 
 set pastetoggle=<F2>
 
@@ -239,7 +227,29 @@ let g:tagbar_type_go = {
       \ 'ctagsargs' : '-sort -silent'
       \ }
 
+" CtrlP search
+silent! call unite#filters#matcher_default#use(['matcher_fuzzy'])
+silent! call unite#filters#sorter_default#use(['sorter_rank'])
+silent! call unite#custom#source('file_rec/async','sorters','sorter_rank')
+
 set noshowmode
+
+" Mappings
+
+map -- :call AllIndent()<cr>
+
+vmap Q gq
+nmap Q gqap
+nmap <silent> ,/ :nohlsearch<CR>
+cmap w!! w !sudo tee % >/dev/null
+
+" Autocomplete
+inoremap <leader>, <C-x><C-o>
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
 nmap <F8> :TagbarToggle<CR>
 
 nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
@@ -249,15 +259,13 @@ nnoremap <Leader>f :Unite grep:.<cr>
 nnoremap <silent> <leader>o :Files ~<CR>
 nnoremap <silent> <leader>G :GFiles<CR>
 nnoremap <silent> <leader>g :GFiles?<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
 
-" CtrlP search
-silent! call unite#filters#matcher_default#use(['matcher_fuzzy'])
-silent! call unite#filters#sorter_default#use(['sorter_rank'])
-silent! call unite#custom#source('file_rec/async','sorters','sorter_rank')
 " replacing unite with ctrl-p
 nnoremap <silent> <C-p> :Unite -start-insert -buffer-name=files -winheight=10 file_rec/async<cr>
 
 noremap <Leader>n :NERDTreeToggle<cr>
+
 """ Vim environment handling tweaks ====
 """"" BACKUP / TMP FILES
 " taken from
