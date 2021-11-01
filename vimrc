@@ -38,6 +38,8 @@ if v:version > 800
     Plug 'fatih/vim-go'
 endif
 Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'Shougo/unite.vim'
 Plug 'scrooloose/syntastic'
 Plug 'roman/golden-ratio'
@@ -243,6 +245,10 @@ nmap <F8> :TagbarToggle<CR>
 nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
 nnoremap <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
 nnoremap <Leader>f :Unite grep:.<cr>
+
+nnoremap <silent> <leader>o :Files ~<CR>
+nnoremap <silent> <leader>G :GFiles<CR>
+nnoremap <silent> <leader>g :GFiles?<CR>
 
 " CtrlP search
 silent! call unite#filters#matcher_default#use(['matcher_fuzzy'])
