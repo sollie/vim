@@ -40,7 +40,6 @@ endif
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'Shougo/unite.vim'
 Plug 'scrooloose/syntastic'
 Plug 'roman/golden-ratio'
 Plug 'majutsushi/tagbar'
@@ -240,7 +239,6 @@ map -- :call AllIndent()<cr>
 
 vmap Q gq
 nmap Q gqap
-nmap <silent> ,/ :nohlsearch<CR>
 cmap w!! w !sudo tee % >/dev/null
 
 " Autocomplete
@@ -249,12 +247,6 @@ inoremap <leader>, <C-x><C-o>
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-nmap <F8> :TagbarToggle<CR>
-
-nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
-nnoremap <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
-nnoremap <Leader>f :Unite grep:.<cr>
 
 nnoremap <silent> <leader>o :Files ~<CR>
 nnoremap <silent> <leader>G :GFiles<CR>
