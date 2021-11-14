@@ -1,5 +1,5 @@
 set nocompatible
-filetype off
+filetype plugin indent off
 set colorcolumn=90
 
 let g:plug_threads = 32
@@ -40,6 +40,8 @@ endif
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/syntastic'
 Plug 'roman/golden-ratio'
 Plug 'majutsushi/tagbar'
@@ -56,6 +58,7 @@ Plug 'vim-airline/vim-airline'       " UI statusbar niceties
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'hashivim/vim-terraform'
+Plug 'juliosueiras/vim-terraform-completion'
 
 let g:terraform_fmt_on_save=1
 
@@ -241,6 +244,9 @@ vmap Q gq
 nmap Q gqap
 cmap w!! w !sudo tee % >/dev/null
 
+nnoremap <silent> <leader>l :Limelight<CR>
+nnoremap <silent> <leader>L :Limelight!<CR>
+
 " Autocomplete
 inoremap <leader>, <C-x><C-o>
 
@@ -248,15 +254,17 @@ inoremap <leader>, <C-x><C-o>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+" fzf
 nnoremap <silent> <leader>o :Files ~<CR>
 nnoremap <silent> <leader>G :GFiles<CR>
 nnoremap <silent> <leader>g :GFiles?<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 
-" replacing unite with ctrl-p
-nnoremap <silent> <C-p> :Unite -start-insert -buffer-name=files -winheight=10 file_rec/async<cr>
+" vim-easy-align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
-noremap <Leader>n :NERDTreeToggle<cr>
+noremap <leader>n :NERDTreeToggle<cr>
 
 """ Vim environment handling tweaks ====
 """"" BACKUP / TMP FILES
