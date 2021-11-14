@@ -58,7 +58,6 @@ Plug 'vim-airline/vim-airline'       " UI statusbar niceties
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'hashivim/vim-terraform'
-Plug 'juliosueiras/vim-terraform-completion'
 
 let g:terraform_fmt_on_save=1
 
